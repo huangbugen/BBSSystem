@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.1.4" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BBSSystem.Contract\BBSSystem.Contract.csproj" />
+    <ProjectReference Include="..\BBSSystem.Domain\BBSSystem.Domain.csproj" />
+    <ProjectReference Include="..\BBSSystem.EntityFrameworkCore\BBSSystem.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

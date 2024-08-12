@@ -15,7 +15,7 @@ namespace BBSSystem.Web.Controllers
         private readonly IReplyService _replyService;
         public ReplyController(IReplyService replyService)
         {
-            this._replyService = replyService;
+            _replyService = replyService;
         }
 
         // [HttpPost]

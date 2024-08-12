@@ -21,11 +21,11 @@ namespace BBSSystem.Application.PointsRuleApp
 
         public PointsRuleService(PostManager postManager, PointsRuleManager pointsRuleManager, ReplyManager replyManager, IDistributedEventBus distributedEventBus, ICurrentClaims currentClaims)
         {
-            this._postManager = postManager;
-            this._pointsRuleManager = pointsRuleManager;
-            this._replyManager = replyManager;
-            this._distributedEventBus = distributedEventBus;
-            this._currentClaims = currentClaims;
+            _postManager = postManager;
+            _pointsRuleManager = pointsRuleManager;
+            _replyManager = replyManager;
+            _distributedEventBus = distributedEventBus;
+            _currentClaims = currentClaims;
         }
 
         public async Task SetTotalScoreAndPublishToUserSystemAsync()

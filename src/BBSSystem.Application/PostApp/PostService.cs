@@ -21,8 +21,8 @@ namespace BBSSystem.Application.PostApp
             PostManager postManager
             )
         {
-            this._postRepo = postRepo;
-            this._postManager = postManager;
+            _postRepo = postRepo;
+            _postManager = postManager;
         }
 
         public async Task<List<PostDto>> GetPostDtosAsync(string sectionId, int pageIndex, int pageSize)

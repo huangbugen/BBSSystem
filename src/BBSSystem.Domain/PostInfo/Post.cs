@@ -58,7 +58,7 @@ namespace BBSSystem.Domain.PostInfo
 
             AddLocalEvent(new ReplyChangeReviewStateEvent
             {
-                PostId = this.Id,
+                PostId = Id,
                 NewReviewState = "T"
             });
 

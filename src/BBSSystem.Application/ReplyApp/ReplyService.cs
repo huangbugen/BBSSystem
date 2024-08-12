@@ -21,8 +21,8 @@ namespace BBSSystem.Application.ReplyApp
             ReplyManager replyManager
             )
         {
-            this._localEventBus = localEventBus;
-            this._replyManager = replyManager;
+            _localEventBus = localEventBus;
+            _replyManager = replyManager;
         }
 
         public async Task<bool> AddReplyAsync(ReplyCreateDto createDto, bool isMaster)

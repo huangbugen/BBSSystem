@@ -25,9 +25,9 @@ namespace BBSSystem.Web.Controllers
             IPointsRuleService pointsRuleService
             )
         {
-            this._postService = postService;
-            this._replyService = replyService;
-            this._pointsRuleService = pointsRuleService;
+            _postService = postService;
+            _replyService = replyService;
+            _pointsRuleService = pointsRuleService;
         }
 
         [HttpPost]

@@ -26,9 +26,9 @@ namespace BBSSystem.Domain.Managers
             ICurrentClaims currentClaims
         )
         {
-            this._replyRepo = replyRepo;
-            this._dataFilter = dataFilter;
-            this._currentClaims = currentClaims;
+            _replyRepo = replyRepo;
+            _dataFilter = dataFilter;
+            _currentClaims = currentClaims;
         }
 
         public async Task<Reply> GetReplyAsync(string replyId, bool isDisableSoftDelete = false)

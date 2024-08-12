@@ -15,7 +15,7 @@ namespace BBSSystem.Application.SectionApp
         private readonly SectionManager _sectionManager;
         public SectionService(SectionManager sectionManager)
         {
-            this._sectionManager = sectionManager;
+            _sectionManager = sectionManager;
         }
         public async Task<SectionSimpleDto> GetSectionSimpleDtoAsync(string sectionId)
         {

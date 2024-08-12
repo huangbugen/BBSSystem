@@ -25,9 +25,9 @@ namespace BBSSystem.Domain.Managers
             ICurrentClaims currentClaims
         )
         {
-            this._postRepo = postRepo;
-            this._postTypeRepo = postTypeRepo;
-            this._currentClaims = currentClaims;
+            _postRepo = postRepo;
+            _postTypeRepo = postTypeRepo;
+            _currentClaims = currentClaims;
         }
 
         public async Task<List<Post>> GetPostsBySectionAsync(int skip, int size, string sectionId)

@@ -47,7 +47,7 @@ namespace BBSSystem.Domain.PostInfo
             UserId = currentClaims.UserId;
             UserName = currentClaims.UserName;
             HeadUrl = currentClaims.HeadUrl;
-            this.IsClose = "F";
+            IsClose = "F";
             CreationTime = DateTime.Now;
         }
 

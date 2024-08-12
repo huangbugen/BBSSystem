@@ -13,7 +13,7 @@ namespace BBSSystem.Web.Filters
         private readonly ICurrentClaims _currentClaims;
         public CurrentUserAuthorizationFilterAttribute(ICurrentClaims currentClaims)
         {
-            this._currentClaims = currentClaims;
+            _currentClaims = currentClaims;
 
         }
         public void OnAuthorization(AuthorizationFilterContext context)

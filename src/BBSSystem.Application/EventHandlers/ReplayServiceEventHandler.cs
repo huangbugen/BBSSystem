@@ -16,7 +16,7 @@ namespace BBSSystem.Application.EventHandlers
         private readonly IPostService _postService;
         public ReplayServiceEventHandler(IPostService postService)
         {
-            this._postService = postService;
+            _postService = postService;
         }
 
         public async Task HandleEventAsync(PostChangeCountEvent eventData)

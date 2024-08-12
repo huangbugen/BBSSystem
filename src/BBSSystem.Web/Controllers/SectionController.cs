@@ -16,7 +16,7 @@ namespace BBSSystem.Web.Controllers
 
         public SectionController(ISectionService sectionService)
         {
-            this._sectionService = sectionService;
+            _sectionService = sectionService;
         }
 
         [HttpGet]

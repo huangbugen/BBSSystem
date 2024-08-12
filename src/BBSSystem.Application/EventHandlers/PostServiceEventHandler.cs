@@ -19,7 +19,7 @@ namespace BBSSystem.Application.EventHandlers
         private readonly IReplyService _replyService;
         public PostServiceEventHandler(IReplyService replyService)
         {
-            this._replyService = replyService;
+            _replyService = replyService;
         }
 
         public async Task HandleEventAsync(ReplyChangeReviewStateEvent eventData)

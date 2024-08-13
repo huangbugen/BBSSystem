@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.AspNet.JwtBearer;
+using Abp.Microservice.Consul;
 using BBSSystem.Contract;
 using BBSSystem.Domain.PostInfo;
 using BBSSystem.Domain.Shared.Events.Eto;
@@ -19,7 +20,8 @@ namespace BBSSystem.Application
         typeof(AbpAutoMapperModule),
         typeof(BBSSystemContractModule),
         typeof(BBSSystemEntityFrameworkCoreModule),
-        typeof(AbpAspNetJwtBearerModule)
+        typeof(AbpAspNetJwtBearerModule),
+        typeof(AbpMicroserviceConsulModule)
     )]
     public class BBSSystemApplicationModule : AbpModule
     {

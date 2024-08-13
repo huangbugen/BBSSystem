@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Abp.Microservice.Consul.ConsulCore;
 using BBSSystem.Contract.ReplyApp;
 using BBSSystem.Contract.ReplyApp.Dto;
 using BBSSystem.Domain.Managers;
@@ -13,16 +15,20 @@ namespace BBSSystem.Application.ReplyApp
 {
     public class ReplyService : ApplicationService, IReplyService
     {
+        public IHttpClientFactory HttpClientFactory { get; set; }
         private readonly ILocalEventBus _localEventBus;
         private readonly ReplyManager _replyManager;
+        private readonly IConsulDispatcher _consulDispatcher;
 
         public ReplyService(
             ILocalEventBus localEventBus,
-            ReplyManager replyManager
+            ReplyManager replyManager,
+            IConsulDispatcher consulDispatcher
             )
         {
             _localEventBus = localEventBus;
             _replyManager = replyManager;
+            this._consulDispatcher = consulDispatcher;
         }
 
         public async Task<bool> AddReplyAsync(ReplyCreateDto createDto, bool isMaster)
@@ -35,6 +41,12 @@ namespace BBSSystem.Application.ReplyApp
             //     PostId = "111",
             //     AddCount = 2
             // }, false);
+
+
+            var httpClient = HttpClientFactory.CreateClient();
+            var requestUrl = _consulDispatcher.GetFullUrl("BBSSystemManagementServiceGroup", "GetSensitiveWords");
+            var words = await httpClient.GetFromJsonAsync<List<string>>(requestUrl);
+            reply.FilterSensitiveWords(words);
 
             await _replyManager.AddReplyAsync(reply, isMaster);
             return true;

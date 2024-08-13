@@ -58,5 +58,19 @@ namespace BBSSystem.Domain.PostInfo
             else
                 IsMasterReply = "F";
         }
+
+        public void FilterSensitiveWords(List<string> words)
+        {
+            foreach (var word in words)
+            {
+                string replayText = "";
+                for (int i = 0; i < word.Length; i++)
+                {
+                    replayText += "*";
+                }
+
+                this.ReplyContent = this.ReplyContent.Replace(word, replayText);
+            }
+        }
     }
 }
